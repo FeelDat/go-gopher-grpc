@@ -18,7 +18,7 @@ import (
 const (
 	port = ":9000"
 
-	KuteGoAPIURL = "https://kutego-api-xxxxx-ew.a.run.app"
+	KuteGoAPIURL = "localhost:8080"
 )
 
 type Server struct {
@@ -46,7 +46,11 @@ var serverCmd = &cobra.Command{
 
 		pb.RegisterGopherServer(grpcServer, &Server{})
 
-		log.Printf("gRPC server listening on %v", lis.Addr())
+		log.Printf("GRPC server listening on %v", lis.Addr())
+		if err := grpcServer.Serve(lis); err != nil {
+			log.Fatalf("failed to serve: %v", err)
+		}
+
 	},
 }
 
@@ -67,7 +71,7 @@ func (s *Server) GetGopher(ctx context.Context, req *pb.GopherRequest) (*pb.Goph
 	log.Printf("Received: %v", req.GetName())
 
 	//Call KuteGo API in order to get Gopher's URL
-	response, err := http.Get(KuteGoAPIURL + "/gophers?name=" + req.GetName())
+	response, err := http.Get("http://" + KuteGoAPIURL + "/gophers?name=" + req.GetName())
 	if err != nil {
 		log.Fatalf("failed to call KuteGoAPI: %v", err)
 	}

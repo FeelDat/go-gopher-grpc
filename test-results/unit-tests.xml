@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="0" errors="0" time="3.853060">
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/FeelDat/go-gopher-grpc" timestamp="2022-09-21T11:36:49+06:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 darwin/arm64"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/FeelDat/go-gopher-grpc/cmd" timestamp="2022-09-21T11:36:49+06:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 darwin/arm64"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/FeelDat/go-gopher-grpc/pkg/gopher" timestamp="2022-09-21T11:36:49+06:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 darwin/arm64"></property>
+		</properties>
+	</testsuite>
+</testsuites>
